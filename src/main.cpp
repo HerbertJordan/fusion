@@ -14,6 +14,24 @@
 using namespace std;
 
 int main() {
-	cout << "!!!Hello World!!!" << endl; // prints !!!Hello World!!!
+
+	geom::NodeManager mgr;
+
+	cout << "Creating an empty Node:\n";
+
+	auto e = mgr.createEmpty();
+	cout << "Result is " << ((e->isEmpty())?"empty":"not empty") << "\n";
+
+	geom::Grid g;
+	auto e2 = mgr.create(g);
+
+	cout << "Result is " << ((e2->isEmpty())?"empty":"not empty") << "\n";
+
+	auto f = mgr.createFull();
+	cout << "Result is " << ((f->isEmpty())?"empty":"not empty") << "\n";
+	cout << "Result is " << ((f->isFull())?"full":"not full") << "\n";
+
+	cout << "Result is " << ((e2->isEmpty())?"empty":"not empty") << "\n";
+
 	return 0;
 }
